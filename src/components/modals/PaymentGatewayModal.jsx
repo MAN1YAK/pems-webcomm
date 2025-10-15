@@ -105,7 +105,7 @@ export class PaymentGatewayModal extends Component {
                             {/* Page 1: Receipt */}
                             {currentPage === 1 && (
                                 <div className={styles.receiptPage}>
-                                    <h3>Receipt</h3>
+                                    <h3 className={styles.receiptTitle}>Receipt</h3>
                                     <div className={styles.receiptItem}>
                                         {receiptData.items.map((item, index) => (
                                             <div key={index} className={styles.receiptRow}>
