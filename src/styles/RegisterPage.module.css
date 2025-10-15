@@ -1,0 +1,71 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    margin-top: 10vh;
+    background: url('/assets/register-background.png') no-repeat center center;
+    background-size: cover;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: right;
+  margin-right: 200px;
+  align-items: center;
+  padding: 2rem;
+}
+
+.registerForm {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.registerForm h2 {
+  text-align: center;
+  color: #008c2f;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.registerForm label {
+  font-weight: 600;
+  color: #333;
+}
+
+.registerForm input {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.registerForm input:focus {
+  border-color: #008c2f;
+  outline: none;
+}
+
+.registerForm button {
+  margin-top: 1rem;
+  padding: 12px 20px;
+  background-color: #008c2f;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.registerForm button:hover {
+  background-color: #006f1f;
+}
+
