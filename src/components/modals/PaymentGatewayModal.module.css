@@ -1,0 +1,281 @@
+.modalContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* semi-transparent overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalBody {
+    background-color: #ffffff;
+    /* white modal */
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.modalTitle {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333333;
+    text-align: center;
+}
+
+.modalContent {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    transition: background 0.2s ease;
+    cursor: pointer;
+    min-height: 75px;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.left {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.left input[type="radio"] {
+    display: none;
+}
+
+.radio {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #555;
+    border-radius: 50%;
+    position: relative;
+}
+
+.left input[type="radio"]:checked+.radio::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    background-color: #0070f3;
+    border-radius: 50%;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* adjust the space between icons */
+}
+
+.cardIcon {
+    height: 50px;
+}
+
+.receiptItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.receiptRow {
+    display: flex;
+    justify-content: space-between;
+    /* pushes name left, price right */
+    align-items: center;
+    font-size: 1rem;
+}
+
+.itemName {
+    text-align: left;
+}
+
+.itemPrice {
+    text-align: right;
+    font-weight: 500;
+}
+
+.receiptRowTotal {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    border-top: 1px solid #ccc;
+    padding-top: 0.5rem;
+}
+
+.rowInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    color: #333;
+}
+
+/* Label text inside rowInput */
+.rowInput>label,
+.rowInput>span {
+    font-weight: 500;
+}
+
+.rowInput>label {
+    text-align: left;
+    display: block;
+    font-weight: 500;
+    margin-bottom: 0.3rem;
+}
+
+/* Input fields */
+.rowInput input {
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    font-size: 1rem;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Input focus effect */
+.rowInput input:focus {
+    border-color: #0070f3;
+    box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.2);
+}
+
+/* Special case: multiple inputs in one row (Expiry + CVC) */
+.rowInput.multiple {
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.rowInput.multiple input {
+    flex: 1;
+    /* equally divide the space */
+}
+
+.nextButton,
+.payButton,
+.backButton,
+.cancelButton {
+    margin-top: 1rem;
+    padding: 0.6rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: medium;
+}
+
+.nextButton {
+    background-color: #0070f3;
+    color: #fff;
+}
+
+.cancelButton {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 10px;
+    transition: background 0.2s ease;
+}
+
+.cancelButton:hover {
+    background-color: #b3b3b3;
+}
+
+.backButton {
+    background-color: #ccc;
+    color: #333;
+    margin-right: 0.5rem;
+}
+
+.payButton {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.loadingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    /* horizontal center */
+    align-items: center;
+    /* vertical center */
+    z-index: 2000;
+    margin: 0;
+    padding: 0;
+}
+
+.loadingBox {
+    background: #fff;
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* center content inside box */
+    align-items: center;
+    /* center content inside box */
+}
+
+.loader {
+    margin-top: 1rem;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #0070f3;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

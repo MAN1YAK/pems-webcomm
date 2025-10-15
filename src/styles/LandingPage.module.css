@@ -1,0 +1,209 @@
+body {
+    overflow-y: auto;
+    height: auto;
+}
+
+.section-navigate {
+    display: flex;
+    justify-content: left;
+    margin-left: 100px;
+    gap: 2rem;
+    padding: 1rem 0;
+    background-color: #ffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.section-navigate button {
+    padding: 0.5rem 1rem;
+    border: 2px solid #008c2f;
+    border-radius: 5px;
+    background: white;
+    color: #008c2f;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.section-navigate button:hover {
+    background-color: #008c2f;
+    color: white;
+}
+
+.sectionbreak {
+    width: 100%;           /* line width relative to container */
+    height: 2px;          /* line thickness */
+    background-color: rgba(0, 0, 0, 0.2); /* line color */
+    margin: 2rem auto;    /* spacing above and below, centered */
+    border-radius: 1px;   /* optional: slightly rounded edges */
+}
+
+.about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.about-section h1 {
+    flex: 1;
+    /* let text take remaining space */
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+
+.about-section :global(.container) {
+    flex: 1;
+}
+
+.technology-section {
+    padding: 60px 50px;
+    text-align: center;
+    background-color: #f9fafb;
+}
+
+.sectionTitle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #008c2f;
+    margin-bottom: 40px;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.card {
+    position: relative;
+    flex: 1 1 300px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-top-color 0.4s ease-in-out;
+    border-top: 2px solid var(--shimmer-color, #ECD08C);
+    /* Default visible border */
+}
+
+/* Base card shimmer logic */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 2px;
+    background: linear-gradient(180deg,
+            /* top → bottom */
+            #fff 0%,
+            #fff 30%,
+            var(--shimmer-color, #ECD08C) 50%,
+            var(--shimmer-color, #ECD08C) 55%,
+            #fff 80%,
+            #fff 100%);
+    background-size: 100% 300%;
+    /* allows vertical movement */
+    background-position: center top;
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+    animation: none;
+    z-index: 1;
+}
+
+.card:hover::before {
+    opacity: 1;
+    animation: shine-vertical 2s ease-in-out infinite alternate;
+}
+
+@keyframes shine-vertical {
+    0% {
+        background-position: center bottom;
+    }
+
+    100% {
+        background-position: center top;
+    }
+}
+
+.card:nth-child(1) {
+    --shimmer-color: #FFB703;
+    /* gold/orange */
+}
+
+.card:nth-child(2) {
+    --shimmer-color: #8AC926;
+    /* green */
+}
+
+.card:nth-child(3) {
+    --shimmer-color: #00B4D8;
+    /* cyan/blue */
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.card>* {
+    position: relative;
+    z-index: 2;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-top-color: rgba(236, 208, 140, 0);
+}
+
+.cardIcon {
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.card h2 {
+    color: #008c2f;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.payment-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10rem;
+    padding: 2rem 0;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.descriptionColumn {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.curvedWaveBackground{
+    margin-top:200px;
+}

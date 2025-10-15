@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  gap: 2rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(rgba(0,140,47,0.9), rgba(0,140,47,0.8)),
+              url('/waves_texture3.jpg') center/cover;
+  color: white;
+  width: 100%;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  bottom: 0;
+}
+
+.footer p {
+    color: #ffff;
+}
