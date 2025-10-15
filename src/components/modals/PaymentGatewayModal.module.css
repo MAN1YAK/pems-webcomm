@@ -107,6 +107,10 @@
     height: 50px;
 }
 
+.receiptPageh3{
+    font-size: 24px;
+}
+
 .receiptItem {
     display: flex;
     flex-direction: column;
